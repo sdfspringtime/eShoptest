@@ -16,7 +16,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 public class Users {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	private long id;
 	private String username;
 	private String password;
 	private String name;
@@ -24,18 +24,17 @@ public class Users {
 	@OneToOne
 	private Chart chart;
 	
-	public Users(int id, String username, String password, String name, String email) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.name = name;
-		this.email = email;
+
+	public Chart getChart() {
+		return chart;
 	}
-	public int getId() {
+	public void setChart(Chart chart) {
+		this.chart = chart;
+	}
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getUsername() {

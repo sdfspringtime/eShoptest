@@ -24,7 +24,7 @@ import javax.persistence.JoinColumn;
 public class Chart {
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
-private int id;
+private long id;
 private float sum;
 @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 @JoinColumn(name = "chartid")
@@ -34,5 +34,35 @@ private Set<Posters> posters = new HashSet<>();
 private Set<Tshirts> tees = new HashSet<>();
 @OneToOne
 private Users user;
+public long getId() {
+	return id;
+}
+public void setId(long id) {
+	this.id = id;
+}
+public float getSum() {
+	return sum;
+}
+public void setSum(float sum) {
+	this.sum = sum;
+}
+public Set<Posters> getPosters() {
+	return posters;
+}
+public void setPosters(Set<Posters> posters) {
+	this.posters = posters;
+}
+public Set<Tshirts> getTees() {
+	return tees;
+}
+public void setTees(Set<Tshirts> tees) {
+	this.tees = tees;
+}
+public Users getUser() {
+	return user;
+}
+public void setUser(Users user) {
+	this.user = user;
+}
 
 }

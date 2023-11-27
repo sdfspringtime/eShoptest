@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Tshirts {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	private long id;
 	private String model;
 	private Sizes size;
     private String Description;
@@ -24,10 +24,10 @@ public class Tshirts {
 	public void setPrice(float price) {
 		this.price = price;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getModel() {
