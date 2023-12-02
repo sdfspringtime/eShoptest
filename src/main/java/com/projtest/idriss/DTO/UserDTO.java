@@ -1,4 +1,4 @@
-package DTO;
+package com.projtest.idriss.DTO;
 
 public class UserDTO {
 	private long id;
